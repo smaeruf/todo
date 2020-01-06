@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
 
   def index
-    render json: Task.all
+    render json: Task.order(:id)
   end
 
   def update
@@ -16,5 +16,5 @@ class TasksController < ApplicationController
     params.require(:task).permit(:done)
   end
 
-  
+
 end
